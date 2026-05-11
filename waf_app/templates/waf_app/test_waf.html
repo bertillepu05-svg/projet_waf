@@ -1,0 +1,95 @@
+{% extends 'waf_app/base.html' %}
+{% load static %}
+
+{% block title %}🧪 Test WAF - GOMABEATS{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="page-header">
+        <h1><i class="fa-solid fa-shield-virus"></i> Test du WAF <i class="fa-solid fa-shield-virus"></i></h1>
+        <p>Testez le pare-feu applicatif avec des requêtes légitimes ou malveillantes</p>
+    </div>
+
+    <!-- FORMULAIRE DE TEST -->
+    <div class="card">
+        <h3><i class="fa-solid fa-terminal"></i> Entrez une requête à tester</h3>
+        <form method="GET" action="{% url 'waf_check' %}">
+            <div class="input-group">
+                <input type="text" name="q" placeholder="Ex : Fally Ipupa, ' OR 1=1, <script>..." value="{{ query }}">
+                <button type="submit" class="btn"><i class="fa-solid fa-play"></i> Tester</button>
+            </div>
+        </form>
+
+        {% if result %}
+        <div class="result-box {% if blocked %}result-blocked{% else %}result-ok{% endif %}">
+            {% if blocked %}
+            <i class="fa-solid fa-skull-crossbones"></i>
+            <div>
+                <strong>⛔ ATTAQUE BLOQUÉE</strong><br>
+                <small>Payload : <code>{{ query }}</code></small><br>
+                <small>Cette tentative a été enregistrée dans les logs ELK</small>
+            </div>
+            {% else %}
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+                <strong>✅ TRAFIC AUTORISÉ</strong><br>
+                <small>Requête : <code>{{ query }}</code></small><br>
+                <small>Aucune menace détectée</small>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- EXEMPLES -->
+    <div class="card">
+        <h3><i class="fa-solid fa-lightbulb"></i> Exemples à tester (cliquez pour utiliser)</h3>
+        <div class="example-list">
+            <!-- Exemples NORMAUX -->
+            <div class="example-item" onclick="useExample(this)">
+                <i class="fa-solid fa-user"></i>
+                <span>Fally Ipupa</span>
+                <span class="tag tag-normal">Normal</span>
+            </div>
+            <div class="example-item" onclick="useExample(this)">
+                <i class="fa-solid fa-user"></i>
+                <span>Innoss'B Afrobeat</span>
+                <span class="tag tag-normal">Normal</span>
+            </div>
+            <div class="example-item" onclick="useExample(this)">
+                <i class="fa-solid fa-user"></i>
+                <span>Gaz Mawete 500</span>
+                <span class="tag tag-normal">Normal</span>
+            </div>
+            <div class="example-item" onclick="useExample(this)">
+                <i class="fa-solid fa-user"></i>
+                <span>Ferré Gola Rumba</span>
+                <span class="tag tag-normal">Normal</span>
+            </div>
+            <!-- Exemples ATTAQUES -->
+            <div class="example-item" onclick="useExample(this)">
+                <i class="fa-solid fa-bug"></i>
+                <span>' OR 1=1 --</span>
+                <span class="tag tag-attack">SQLi</span>
+            </div>
+            <div class="example-item" onclick="useExample(this)">
+                <i class="fa-solid fa-bug"></i>
+                <span>' UNION SELECT * FROM users --</span>
+                <span class="tag tag-attack">SQLi</span>
+            </div>
+            <div class="example-item" onclick="useExample(this)">
+                <i class="fa-solid fa-bug"></i>
+                <span>&lt;script&gt;alert('XSS')&lt;/script&gt;</span>
+                <span class="tag tag-attack">XSS</span>
+            </div>
+            <div class="example-item" onclick="useExample(this)">
+                <i class="fa-solid fa-bug"></i>
+                <span>../../etc/passwd</span>
+                <span class="tag tag-attack">Path Trav.</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

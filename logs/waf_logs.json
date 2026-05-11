@@ -1,0 +1,37 @@
+{"timestamp": "2026-05-05T05:24:30.272008", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "test_waf", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-05T05:25:56.950911", "ip": "127.0.0.1", "attack_type": "Path Traversal", "payload": "../", "blocked": true, "source_page": "test_waf", "full_query": "../../etc/passwd"}
+{"timestamp": "2026-05-05T05:26:16.454067", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-05T05:52:36.827459", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "test_waf", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-05T06:04:34.074516", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "test_waf", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-06T04:57:37.276534", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-06T05:15:42.892764", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-07T03:17:08.838599", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-07T03:17:43.977118", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-07T03:34:00.825339", "ip": "127.0.0.1", "attack_type": "Path Traversal", "payload": "../", "blocked": true, "source_page": "blog_search", "full_query": "../../etc/passwd"}
+{"timestamp": "2026-05-07T03:35:49.132466", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-07T03:36:07.470224", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "<script>alert('XSS')</script>"}
+{"timestamp": "2026-05-07T03:37:09.659003", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "javascript:alert('XSS')"}
+{"timestamp": "2026-05-07T03:37:55.648648", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-07T03:38:11.844589", "ip": "127.0.0.1", "attack_type": "Path Traversal", "payload": "../", "blocked": true, "source_page": "blog_search", "full_query": "../../etc/passwd"}
+{"timestamp": "2026-05-07T03:38:56.868761", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "<script>alert('XSS')</script>"}
+{"timestamp": "2026-05-07T03:41:58.099918", "ip": "127.0.0.1", "attack_type": "XSS", "payload": "onerror=", "blocked": true, "source_page": "blog_search", "full_query": "onerror=alert(1)"}
+{"timestamp": "2026-05-07T03:42:23.560215", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "javascript:alert('XSS')"}
+{"timestamp": "2026-05-07T04:45:13.119359", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "test_waf", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-07T04:50:43.898571", "ip": "127.0.0.1", "attack_type": "Path Traversal", "payload": "../", "blocked": true, "source_page": "test_waf", "full_query": "../../etc/passwd"}
+{"timestamp": "2026-05-07T04:50:46.933364", "ip": "127.0.0.1", "attack_type": "Path Traversal", "payload": "../", "blocked": true, "source_page": "test_waf", "full_query": "../../etc/passwd"}
+{"timestamp": "2026-05-07T04:51:37.969852", "ip": "127.0.0.1", "attack_type": "XSS", "payload": "onerror=", "blocked": true, "source_page": "test_waf", "full_query": "onerror=alert(1)"}
+{"timestamp": "2026-05-07T04:58:01.284564", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "test_waf", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-09T16:19:21.647046", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-09T16:20:00.821540", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_comment", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-09T16:20:26.996294", "ip": "127.0.0.1", "attack_type": "Path Traversal", "payload": "../", "blocked": true, "source_page": "test_waf", "full_query": "../../etc/passwd"}
+{"timestamp": "2026-05-09T17:16:08.051914", "ip": "127.0.0.1", "attack_type": "Path Traversal", "payload": "../", "blocked": true, "source_page": "blog_search", "full_query": "../../etc/passwd"}
+{"timestamp": "2026-05-09T17:16:20.475514", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-09T17:19:16.123153", "ip": "127.0.0.1", "attack_type": "Path Traversal", "payload": "../", "blocked": true, "source_page": "blog_search", "full_query": "../../etc/passwd"}
+{"timestamp": "2026-05-09T17:32:34.541575", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-09T17:32:41.298855", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-09T17:33:37.064375", "ip": "127.0.0.1", "attack_type": "XSS", "payload": "<script>", "blocked": true, "source_page": "blog_search", "full_query": "<script>Alerte(1)</script>"}
+{"timestamp": "2026-05-09T17:39:54.768669", "ip": "127.0.0.1", "attack_type": "Path Traversal", "payload": "../", "blocked": true, "source_page": "blog_search", "full_query": "../../etc/passwd"}
+{"timestamp": "2026-05-09T18:18:44.263228", "ip": "127.0.0.1", "attack_type": "Path Traversal", "payload": "../", "blocked": true, "source_page": "blog_search", "full_query": "../../etc/passwd"}
+{"timestamp": "2026-05-09T18:19:04.074294", "ip": "127.0.0.1", "attack_type": "SQL Injection", "payload": "'", "blocked": true, "source_page": "blog_search", "full_query": "' OR 1=1 --"}
+{"timestamp": "2026-05-09T18:19:20.019502", "ip": "127.0.0.1", "attack_type": "XSS", "payload": "onerror=", "blocked": true, "source_page": "blog_search", "full_query": "onerror=alert(1)"}
+{"timestamp": "2026-05-09T18:19:34.866195", "ip": "127.0.0.1", "attack_type": "Path Traversal", "payload": "../", "blocked": true, "source_page": "blog_search", "full_query": "../../etc/passwd"}

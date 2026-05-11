@@ -1,0 +1,83 @@
+{% extends 'waf_app/base.html' %}
+{% load static %}
+
+{% block title %}📊 Dashboard WAF - GOMABEATS{% endblock %}
+
+{% block content %}
+<div class="container-lg">
+
+    <div class="page-header">
+        <h1><i class="fa-solid fa-chart-pie"></i> Dashboard des Attaques <i class="fa-solid fa-chart-pie"></i></h1>
+    </div>
+
+    <!-- STATISTIQUES -->
+    <div class="stats-grid">
+        <div class="stat-card stat-red">
+            <i class="fa-solid fa-shield-virus"></i>
+            <h2>{{ total_attacks }}</h2>
+            <p>Attaques bloquées</p>
+        </div>
+        <div class="stat-card stat-orange">
+            <i class="fa-solid fa-database"></i>
+            <h2>{{ sql_count }}</h2>
+            <p>SQL Injection</p>
+        </div>
+        <div class="stat-card stat-blue">
+            <i class="fa-solid fa-code"></i>
+            <h2>{{ xss_count }}</h2>
+            <p>Cross-Site Scripting</p>
+        </div>
+        <div class="stat-card stat-green">
+            <i class="fa-solid fa-folder-open"></i>
+            <h2>{{ path_count }}</h2>
+            <p>Path Traversal</p>
+        </div>
+    </div>
+
+    <!-- TABLEAU -->
+    <div class="table-card">
+        <h3><i class="fa-solid fa-list-ul"></i> Dernières attaques détectées</h3>
+        {% if logs %}
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th><i class="fa-solid fa-calendar"></i> Date</th>
+                        <th><i class="fa-solid fa-globe"></i> IP Source</th>
+                        <th><i class="fa-solid fa-tag"></i> Type</th>
+                        <th><i class="fa-solid fa-bomb"></i> Payload</th>
+                        <th><i class="fa-solid fa-file"></i> Page</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for log in logs %}
+                    <tr>
+                        <td>{{ log.timestamp }}</td>
+                        <td><code>{{ log.ip }}</code></td>
+                        <td>
+                            {% if log.attack_type == "SQL Injection" %}
+                            <span class="badge badge-sql"><i class="fa-solid fa-database"></i> SQL Injection</span>
+                            {% elif log.attack_type == "XSS" %}
+                            <span class="badge badge-xss"><i class="fa-solid fa-code"></i> XSS</span>
+                            {% else %}
+                            <span class="badge badge-path"><i class="fa-solid fa-folder-open"></i> {{ log.attack_type }}</span>
+                            {% endif %}
+                        </td>
+                        <td><code>{{ log.payload }}</code></td>
+                        <td>{{ log.source_page }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <i class="fa-solid fa-shield-heart"></i>
+            <h3>Aucune attaque détectée</h3>
+            <p>Le WAF est opérationnel et protège le site. Les attaques apparaîtront ici automatiquement.</p>
+        </div>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}

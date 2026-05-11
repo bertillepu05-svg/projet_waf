@@ -1,0 +1,23 @@
+<nav class="navbar">
+    <a href="/" class="logo">
+        <i class="fa-solid fa-music"></i>
+        GOMABEATS<span>.MUSIC</span>
+    </a>
+    <ul class="nav-links">
+        <li>
+            <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">
+                <i class="fa-solid fa-house"></i> Accueil
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'test_waf' %}" class="{% if request.path == '/waf/' %}active{% endif %}">
+                <i class="fa-solid fa-shield-halved"></i> Test WAF
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'dashboard' %}" class="{% if request.path == '/waf/dashboard/' %}active{% endif %}">
+                <i class="fa-solid fa-chart-bar"></i> Dashboard
+            </a>
+        </li>
+    </ul>
+</nav>
