@@ -107,6 +107,7 @@ def write_log(entry):
         f.write(json.dumps(entry) + "\n")
 
 
+
 def check_attack(text, request):
     patterns = {
         "SQL Injection": ["'", '"', " OR ", "1=1", "DROP ", "UNION ", "SELECT ", "--"],
