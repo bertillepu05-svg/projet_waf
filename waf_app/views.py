@@ -52,20 +52,6 @@ ARTISTS = [
         "keywords": ["gaz", "mawete", "500", "rap", "trap"]
     },
     {
-        "name": "Fabri GAZ",
-        "album": "Dynastie 2",
-        "year": 2026,
-        "origin": "Kinshasa 🇨🇩",
-        "genre": "Rumba / Soukous",
-        "quote": "Le Padre de la rumba. La patience est une vertu qui transforme les rêves en réalité.",
-        "streams": "20M",
-        "awards": 15,
-        "albums": 7,
-        "icon": "drum",
-        "class": "ferre",
-        "keywords": ["ferre", "gola", "dynastie", "rumba", "padre", "soukous"]
-    },
-    {
         "name": "Innoss'B",
         "album": "Jeune Leader",
         "year": 2023,
@@ -170,7 +156,7 @@ def blog_search(request):
         return render(request, 'waf_app/blog.html', {
             'artists': ARTISTS,
             'is_search': False,
-            'error': f'⛔ <strong>{attack_type}</strong> bloquée par le WAF !<br>Payload : <code>{keyword}</code>'
+            'error': f'<strong>{attack_type}</strong> bloquée par le WAF !<br>Payload : <code>{keyword}</code>'
         })
 
     # Recherche normale
@@ -179,7 +165,7 @@ def blog_search(request):
         'artists': artists,
         'is_search': is_search,
         'query': query,
-        'message': f'<i class="fa-solid fa-check"></i> {len(artists)} artiste(s) trouvé(s) pour "<strong>{query}</strong>"' if query else ''
+        'message': f' {len(artists)} artiste(s) trouvé(s) pour "<strong>{query}</strong>"' if query else ''
     })
 
 
@@ -205,13 +191,13 @@ def blog_comment(request):
         return render(request, 'waf_app/blog.html', {
             'artists': ARTISTS,
             'is_search': False,
-            'error': f'⛔ Commentaire bloqué ! <strong>{attack_type}</strong> détectée.'
+            'error': f'Commentaire bloqué ! <strong>{attack_type}</strong> détectée.'
         })
 
     return render(request, 'waf_app/blog.html', {
         'artists': ARTISTS,
         'is_search': False,
-        'message': '<i class="fa-solid fa-check"></i> ✅ Votre commentaire a été publié avec succès !'
+        'message': 'Votre commentaire a été publié avec succès !'
     })
 
 

@@ -80,7 +80,7 @@
         <h3><i class="fa-solid fa-comments"></i> Laissez un commentaire</h3>
         <form method="POST" action="{% url 'blog_comment' %}">
             {% csrf_token %}
-            <textarea name="comment" placeholder="Partagez votre avis sur vos artistes préférés..." rows="4"></textarea>
+            <textarea name="comment" placeholder="Partagez votre avis sur vos artistes préférés..." rows="4" required></textarea>
             <button type="submit" class="btn" style="margin-top:15px;"><i class="fa-solid fa-paper-plane"></i> Publier</button>
         </form>
         <span class="waf-badge"><i class="fa-solid fa-shield-halved"></i> Commentaires protégés par WAF</span>

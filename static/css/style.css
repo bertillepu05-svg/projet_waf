@@ -738,7 +738,7 @@ tr:hover {
 
     .navbar .nav-links {
         flex-wrap: wrap;
-        justify-content: center;
+        gap: 2px;
     }
 
     .hero h1 {
